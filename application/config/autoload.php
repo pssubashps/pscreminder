@@ -52,7 +52,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array();
+$autoload['libraries'] = array('database','form_validation','session');
 
 
 /*
@@ -64,7 +64,7 @@ $autoload['libraries'] = array();
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('form');
+$autoload['helper'] = array('form','url','psc_util');
 
 
 /*
@@ -80,7 +80,7 @@ $autoload['helper'] = array('form');
 |
 */
 
-$autoload['config'] = array();
+$autoload['config'] = array('config_psc_email_templates','config_psc_constants');
 
 
 /*

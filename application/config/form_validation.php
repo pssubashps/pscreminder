@@ -14,13 +14,46 @@ $config = array ();
  * action signup
  * description this action is used to register a new user
  */
-$config['user/signup'] = array ();
+$config['home/signup'] = array ();
 
 $fullname = array(
 				'field' => 'user_fullname',
 				'label' => 'Name',
-				'rules' => 'alpha'
+				'rules' => 'required|max_length[25]'
+				);
+
+$email = array(
+				'field' => 'user_username',
+				'label' => 'Email',
+				'rules' => 'required|valid_email|is_unique[user.user_email]'
 				);
 				
-array_push($config['user/signup'] , $fullname);
- 
+$dob = array(
+				'field' => 'user_dob',
+				'label' => 'Date of birth',
+				'rules' => 'required'
+				);
+				
+array_push($config['home/signup'] , $fullname);
+array_push($config['home/signup'] , $email); 
+array_push($config['home/signup'] , $dob); 
+
+
+$config['login/index'] = array ();
+
+$username = array(
+				'field' => 'user_email',
+				'label' => 'username',
+				'rules' => 'required|valid_email'
+				);
+
+$password = array(
+				'field' => 'user_password',
+				'label' => 'Password',
+				'rules' => 'required'
+				);
+				
+
+				
+array_push($config['login/index'] , $username);
+array_push($config['login/index'] , $password); 
